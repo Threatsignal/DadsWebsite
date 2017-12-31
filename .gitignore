@@ -1,0 +1,12 @@
+_site/
+cfms-website.sublime-project
+cfms-website.sublime-workspace
+.DS_Store
+.sass-cache/
+.jekyll-metadata
+node_modules/
+coverage/
+.vscode/
+serve/
+.idea/
+package-lock\.json
