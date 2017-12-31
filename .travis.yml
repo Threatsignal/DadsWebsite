@@ -21,8 +21,8 @@ branches:
   - staging
 env:
   global:
-  - ENCRYPTION_LABEL: "6315171ce8db"
-  - COMMIT_AUTHOR_EMAIL: "it@cfms.org"
+  - ENCRYPTION_LABEL: "721f18e46ab0"
+  - COMMIT_AUTHOR_EMAIL: "schuuly@gmail.com"
   - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
   - JEKYLL_ENV: "production"
 cache:
