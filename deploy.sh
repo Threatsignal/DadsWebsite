@@ -2,7 +2,7 @@
 set -e # Exit with nonzero exit code if anything fails
 
 SOURCE_BRANCH="staging"
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH="master"
 
 function doCompile {
   #Renaming gemfile for build 
