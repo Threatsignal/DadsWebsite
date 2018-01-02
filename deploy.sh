@@ -37,10 +37,10 @@ MASTER_SHA=`git log -n 1 --pretty=format:"%B" | cut -d':' -f2 | cut -c2-`
 cd ..
 
 # Check if there are changes to website source or tests otherwise bail.
-if ! git --no-pager diff --name-only $SHA $MASTER_SHA | grep -qP "^src\/|^test\/"; then
-  echo "No changes to website source in this commit. Skipping build & push."
-  exit 0
-fi
+#if ! git --no-pager diff --name-only $SHA $MASTER_SHA | grep -qP "^src\/|^test\/"; then
+#  echo "No changes to website source in this commit. Skipping build & push."
+#  exit 0
+#fi
 
 # Clean out existing contents
 rm -rf serve/* || exit 0
