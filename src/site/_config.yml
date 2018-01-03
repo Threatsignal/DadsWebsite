@@ -1,8 +1,8 @@
 #Firebase URL
 firebase_url: "https://amber-heat-9132.firebaseio.com/"
 
-keep_files: ['stylesheets', 'js', 'files', 'images']
-exclude: ['stylesheets', 'js', 'files', 'images']
+keep_files: ['stylesheets', 'js', 'files', 'images', 'CNAME.txt']
+exclude: ['stylesheets', 'js', 'files', 'images', 'CNAME.txt']
 
 rdiscount:
   extensions: [smart]
