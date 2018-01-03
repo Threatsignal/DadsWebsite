@@ -2,7 +2,7 @@ language: ruby
 dist: trusty
 sudo: false
 rvm:
-  - 2.2
+  - 2.5
 before_script:
   - npm install -g gulp
 before_install:
@@ -14,7 +14,6 @@ install:
   - gem install github-pages
   - gem install jekyll-paginate
   - gem install jekyll-paginate-v2
-  - gem install rake
   - npm install
 script: bash ./deploy.sh
 branches:
