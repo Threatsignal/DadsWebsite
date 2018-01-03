@@ -72,7 +72,7 @@ ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
 echo The output is the following:
-echo ${ENCRYPTED_KEY}
+echo ${ENCRYPTED_KEY_VAR}
 echo ${ENCRYPTED_IV}
 openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
 chmod 600 deploy_key
