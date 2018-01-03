@@ -21,7 +21,7 @@ branches:
   - staging
 env:
   global:
-  - ENCRYPTION_LABEL: "721f18e46ab0"
+  - ENCRYPTION_LABEL: "34757d28b24e"
   - COMMIT_AUTHOR_EMAIL: "schuuly@gmail.com"
   - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
   - JEKYLL_ENV: "production"
