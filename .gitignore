@@ -10,3 +10,4 @@ coverage/
 serve/
 .idea/
 package-lock\.json
+Gemfile.lock
