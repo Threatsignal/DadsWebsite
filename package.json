@@ -46,7 +46,6 @@
     "jsonwebtoken": "^7.4.3",
     "page": "^1.7.1",
     "request-promise": "^4.2.2",
-    "semantic-ui": "^2.2.13",
     "vex-dialog": "^1.0.6",
     "vex-js": "^3.0.0"
   },
