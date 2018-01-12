@@ -6,18 +6,40 @@ title: This is a test.
 <html lang="en">
 <head>
     {% include head.html %}
+    <link rel="stylesheet" href="/stylesheets/ken-burns.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         {% include nav.html %}
+
+        <script type="text/javascript">
+			    document.querySelector( "#homeLink" ).classList.toggle("active");
+			    document.querySelector( "#homeLink" ).classList.toggle("disabled");
+        </script>
         
         <div class="row">
-            <div class="col-sm">
-                <h1>This is now For you jeong</h1>
-            </div>
-            
-            <div class="col-sm">
-                <h2> Hows it going Jeong, You asia mang!</h2>
+            <!-- ++++++++++++++++++++++++++ BOOTSTRAP CAROUSEL +++++++++++++++++++++++++++++ -->
+
+            <div id="kb" class="carousel slide kb_elastic animate_text kb_wrapper" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item item active">
+                        <img class="d-block w-100" src="https://unsplash.it/1920/1680?image=878" alt="First slide">
+                    </div>
+                    <div class="carousel-item item">
+                        <img class="d-block w-100" src="https://unsplash.it/1920/1680?image=874" alt="Second slide">
+                    </div>
+                    <div class="carousel-item item">
+                        <img class="d-block w-100" src="https://unsplash.it/1920/1680?image=871" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </div>
