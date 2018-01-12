@@ -6,6 +6,8 @@ keep_files: ['stylesheets', 'js', 'files', 'images/']
 
 repository: schuuly/schuuly.github.io
 
+site-name: T & A Repairs
+
 url: "https://schuuly.github.io"
 plugins: [jekyll-paginate, jekyll-paginate-v2]
 
