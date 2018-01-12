@@ -20,7 +20,6 @@ title: This is a test.
 
     <div class="row">
         <!-- ++++++++++++++++++++++++++ BOOTSTRAP CAROUSEL +++++++++++++++++++++++++++++ -->
-
         <div id="kb" class="carousel slide kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000"
              data-pause="hover">
             <div class="carousel-inner">
@@ -32,39 +31,19 @@ title: This is a test.
                     {% endif %}
                             <img class="d-block w-100 img-fluid" src="{{item.img-link}}"
                                  alt="{{item.img-alt}}">
+                            {% if item.img-caption-position == "Left" %}
                             <div class="carousel-caption d-none d-md-block kb_caption">
+                            {% elsif item.img-caption-position == "Right" %}
+                            <div class="carousel-caption d-none d-md-block kb_caption kb_caption_right">
+                            {% else %}
+                            <div class="carousel-caption d-none d-md-block kb_caption kb_caption_center">      
+                            {% endif %}
                                 <h1 data-animation="animated flipInX">{{item.img-main-text}}</h1>
                                 <h2 data-animation="animated flipInX">{{item.img-secondary-text}}</h2>
                             </div>
                         </div>
                 {% endfor %}
-
-
-                        <!--<div class="carousel-item item active">-->
-                            <!--<img class="d-block w-100 img-fluid" src="/images/carousel/2016-10-15.jpg"-->
-                                 <!--alt="First slide">-->
-                            <!--<div class="carousel-caption d-none d-md-block kb_caption">-->
-                                <!--<h1 data-animation="animated flipInX">Ken Burns</h1>-->
-                                <!--<h2 data-animation="animated flipInX">A jQuery / CSS3 extension</h2>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="carousel-item item">-->
-                            <!--<img class="d-block w-100 img-fluid" src="/images/carousel/2016-11-25.jpg"-->
-                                 <!--alt="Second slide">-->
-                            <!--<div class="carousel-caption d-none d-md-block kb_caption kb_caption_right">-->
-                                <!--<h1 data-animation="animated flipInX">Ken Burns</h1>-->
-                                <!--<h2 data-animation="animated flipInX">A jQuery / CSS3 extension</h2>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="carousel-item item">-->
-                            <!--<img class="d-block w-100 img-fluid" src="https://unsplash.it/1920/1680?image=871"-->
-                                 <!--alt="Third slide">-->
-                            <!--<div class="carousel-caption d-none d-md-block kb_caption kb_caption_center">-->
-                                <!--<h1 data-animation="animated flipInX">Ken Burns</h1>-->
-                                <!--<h2 data-animation="animated flipInX">A jQuery / CSS3 extension</h2>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>--></div>
+                </div>
                     <a class="carousel-control-prev left carousel-control kb_control_left" href="#kb" role="button"
                        data-slide="prev">
                         <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
@@ -75,9 +54,9 @@ title: This is a test.
                         <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                
             </div>
         </div>
+</div>
 
         {% include footer.html %}
 </body>
