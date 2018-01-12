@@ -1,11 +1,12 @@
 #Firebase URL
 firebase_url: "https://amber-heat-9132.firebaseio.com/"
 
-keep_files: ['stylesheets', 'js', 'files', 'images', 'CNAME.txt']
-exclude: ['stylesheets', 'js', 'files', 'images', 'CNAME.txt']
+keep_files: ['stylesheets', 'js', 'files', 'images/']
 
-rdiscount:
-  extensions: [smart]
 
-url: "https://cfms.org"
+repository: schuuly/schuuly.github.io
+
+url: "https://schuuly.github.io"
 plugins: [jekyll-paginate, jekyll-paginate-v2]
+
+
