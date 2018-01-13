@@ -6,6 +6,12 @@ title: This is a test.
 <html lang="en">
 <head>
     {% include head.html %}
+    <link rel="stylesheet" href="/stylesheets/cards.css">
+    <link rel="stylesheet" href="/stylesheets/photo-swipe.css">
+    <link rel="stylesheet" href="/stylesheets/flickrStyles.css">
+    <link rel="stylesheet" href="/stylesheets/listJs-styles.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+</head>
 </head>
 <body>
 <div class="container">
@@ -19,7 +25,67 @@ title: This is a test.
     <div class="row">
         <h1>Photo Gallery</h1>
     </div>
+    
+        <div id="closeButton" style="display:none; cursor:pointer; width:3.2em; height:3.5em">
+            <h1 style="font-size:4.0em;"><i class="fa fa-arrow-left" aria-hidden="true"></i></h1>
+        </div>
+        <br />
+        
+        <div id="albumContainer">
+            <div>
+                <input type="text" class="search editable" placeholder="Search Albums" />
+                <select id="filter-tags">
+                    <option value="Select Year" class="editable">Select Year</option>
+                </select>
+
+
+            </div>
+            <br />
+            <ul class="sort-by">
+                <li class="sort btn" data-sort="albumTitle"><span class="editable">Sort by Name</span></li>
+                <li class="sort btn" data-sort="albumSchool"><span class="editable">Sort by School</span></li>
+                <li class="sort btn" data-sort="albumEvent"><span class="editable">Sort by Event</span></li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <ul class="pagination"></ul>
+
+            <ul id="list" class="list">
+            </ul>
+            <div class="loader"></div>
+        </div>
+
+        <div id="errorMessage" style="display:none;"></div>
+
+        <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="play-pause"></a>
+        </div>
+    
+        <!-- The container for the list of example images -->
+        <div id="links" class="links"></div>
+    <br />
+
+
+    <!--This has to be child of the body to work-->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    
 
     {% include footer.html %}
+
+
 </body>
 </html>
