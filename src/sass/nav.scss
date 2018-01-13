@@ -1,4 +1,7 @@
 #navigation{
   background-color:#272A32;
   
+  a.disabled{
+    pointer-events: none;
+  }
 }
