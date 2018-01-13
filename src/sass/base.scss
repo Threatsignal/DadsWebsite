@@ -1,4 +1,5 @@
 body{
+  background-color:#F4F4F4;
   a{
     color: #007bff;
     text-decoration: none;
@@ -7,5 +8,9 @@ body{
   }
   a:hover{
     color:	#FFA500;
+  }
+  
+  .dropdown-menu a:hover{
+    background-color:lightgrey;
   }
 }
