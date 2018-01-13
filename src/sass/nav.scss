@@ -1,7 +1,22 @@
 #navigation{
   background-color:#272A32;
+  font-size: xx-large;
+  .dropdown-menu{
+    background-color:#272A32;
+  }
+  
+  a{
+    color:#F5F5F5;
+  }
+  a:hover{
+    color:orange;
+  }
   
   a.disabled{
+    color:darkgray;
     pointer-events: none;
+  }
+  .dropdown-menu a:hover{
+    background-color:#272A32;
   }
 }
