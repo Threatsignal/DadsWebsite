@@ -22,9 +22,9 @@ export default class PhotoGalleryController{
 				url: 'https://api.flickr.com/services/rest/',
 				data: {
 					format: 'json',
-					user_id: '151536734@N03',
+					user_id: '154596101@N02',
 					method: 'flickr.photosets.getList',
-					api_key: '0de69094c4a08c0ec198f6e200681d2e'
+					api_key: '2360ff92cabc49f59a9ceaa136a0fbcb'
 				},
 				dataType: 'jsonp',
 				jsonp: 'jsoncallback'
@@ -113,9 +113,9 @@ export default class PhotoGalleryController{
 							data: {
 								format: 'json',
 								photoset_id: this.id,
-								user_id: '151536734@N03',
+								user_id: '154596101@N02',
 								method: 'flickr.photosets.getPhotos',
-								api_key: '0de69094c4a08c0ec198f6e200681d2e'
+								api_key: '2360ff92cabc49f59a9ceaa136a0fbcb'
 							},
 							dataType: 'jsonp',
 							jsonp: 'jsoncallback'
