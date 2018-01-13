@@ -1,12 +1,14 @@
 #navigation{
-  background-color:#272A32;
-  font-size: xx-large;
+  background-color:#343a40;
+  font-size: x-large;
+  
   .dropdown-menu{
-    background-color:#272A32;
+    background-color:#343a40;
   }
   
   a{
     color:#F5F5F5;
+    padding-right: 1.2rem;
   }
   a:hover{
     color:orange;
