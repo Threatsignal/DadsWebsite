@@ -1,1 +1,1 @@
-#navigation{background-color:#272A32}#navigation a.disabled{pointer-events:none}
+#navigation,#navigation .dropdown-menu,#navigation .dropdown-menu a:hover{background-color:#272A32}#navigation{font-size:xx-large}#navigation a{color:#F5F5F5}#navigation a:hover{color:orange}#navigation a.disabled{color:#a9a9a9;pointer-events:none}
