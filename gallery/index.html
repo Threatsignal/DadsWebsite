@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
 
+<script src="https://schuuly.github.io/js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="https://schuuly.github.io/stylesheets/base.css">
 <link rel="stylesheet" href="https://schuuly.github.io/stylesheets/nav.css">
 <link rel="stylesheet" href="https://schuuly.github.io/stylesheets/footer.css">
@@ -26,7 +27,9 @@
 <script src="https://use.fontawesome.com/9dac85e881.js"></script>
 
 <!--JQuery-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
 
@@ -34,6 +37,12 @@
 
 
 <!--Google Analytics goes here! -->
+    <link rel="stylesheet" href="/stylesheets/cards.css">
+    <link rel="stylesheet" href="/stylesheets/photo-swipe.css">
+    <link rel="stylesheet" href="/stylesheets/flickrStyles.css">
+    <link rel="stylesheet" href="/stylesheets/listJs-styles.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+</head>
 </head>
 <body>
 <div class="container">
@@ -73,6 +82,64 @@
     <div class="row">
         <h1>Photo Gallery</h1>
     </div>
+    
+        <div id="closeButton" style="display:none; cursor:pointer; width:3.2em; height:3.5em">
+            <h1 style="font-size:4.0em;"><i class="fa fa-arrow-left" aria-hidden="true"></i></h1>
+        </div>
+        <br />
+        
+        <div id="albumContainer">
+            <div>
+                <input type="text" class="search editable" placeholder="Search Albums" />
+                <select id="filter-tags">
+                    <option value="Select Year" class="editable">Select Year</option>
+                </select>
+
+
+            </div>
+            <br />
+            <ul class="sort-by">
+                <li class="sort btn" data-sort="albumTitle"><span class="editable">Sort by Name</span></li>
+                <li class="sort btn" data-sort="albumSchool"><span class="editable">Sort by School</span></li>
+                <li class="sort btn" data-sort="albumEvent"><span class="editable">Sort by Event</span></li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <ul class="pagination"></ul>
+
+            <ul id="list" class="list">
+            </ul>
+            <div class="loader"></div>
+        </div>
+
+        <div id="errorMessage" style="display:none;"></div>
+
+        <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="play-pause"></a>
+        </div>
+    
+        <!-- The container for the list of example images -->
+        <div id="links" class="links"></div>
+    <br />
+
+
+    <!--This has to be child of the body to work-->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    
 
     <div class="row footer">
     <div class="col-sm">
@@ -141,6 +208,8 @@
 
 
 <script type="text/javascript" src="https://schuuly.github.io/js/bundle.js"></script>
+
+
 
 </body>
 </html>
