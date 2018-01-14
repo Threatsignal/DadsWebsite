@@ -1,0 +1,31 @@
+---
+title: "Site Map"
+lang: 'en'
+sitemap:
+  exclude: 'yes'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/sitemap.css">
+</head>
+<body>
+<div class="container">
+    {% include nav.html %}
+
+    <script type="text/javascript">
+//			document.querySelector( "#contactLink" ).classList.toggle("active");
+//			document.querySelector( "#contactLink" ).classList.toggle("disabled");
+    </script>
+    
+        <h1>Sitemap</h1>
+
+        {% include sitemap.html context="/" currentPath=""  lang='en'%}
+        
+
+    {% include footer.html %}
+</body>
+</html>

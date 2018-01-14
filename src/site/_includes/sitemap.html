@@ -1,0 +1,77 @@
+{% capture html %}
+{% if include.context == "/" and include.lang == 'en' %}
+<a href="{{ site.baseurl }}/"><h2>{{ site.site-name }}</h2></a>
+
+{% endif %}
+<ul>
+    {% assign entries = site.pages | sort: "path" %}
+    {% assign currentDirectory = include.currentPath | append: '/' %}
+    
+    {% for entry in entries %}
+        {% unless entry.sitemap.exclude == "yes" %}
+            {% capture slug %}{{ entry.url | split: "/" | last }}{% endcapture %}
+            {% capture current %}{{ entry.url | remove: slug | remove: "//" | append: "/" }}{% endcapture %}
+            {% capture directory %}{{ current | replace: '//', '/' }}{% endcapture %}
+            {% capture currentTreePath %}{{current}}{{slug}}{% endcapture %}
+        
+            {% if current == include.context %}
+        
+                {% if include.lang == 'en' %}
+                    {% unless entry.url contains '/fr/' %}
+                    <li>
+                        <a href="{{ site.baseurl }}{{ entry.url }}">
+                            <span class="{% if entry.sitemap.role=='National IT Officer' %}it-officer{% elsif entry.sitemap.role=='VP Communications' %}vp-communications
+                            {% elsif entry.sitemap.role=='President' %}president{% elsif entry.sitemap.role=='VP Education' %}vp-education{% elsif entry.sitemap.role=='VP Finance'%}
+                            vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
+                            vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">{{ entry.title }}</span></a>
+                        {% include sitemap.html context=entry.url currentPath=currentTreePath lang='en' %}
+                        {% assign currentDirectory = include.currentPath | append: '/' %}
+                        {% continue %}
+                    </li>
+                    {% endunless %}
+                {% elsif include.lang == 'fr' %}
+                    {% if entry.url contains '/fr/' %}
+                        <li>
+                            <a href="{{ site.baseurl }}{{ entry.url }}">
+                                        <span class="{% if entry.sitemap.role=='National IT Officer' %}it-officer{% elsif entry.sitemap.role=='VP Communications' %}vp-communications
+                                        {% elsif entry.sitemap.role=='President' %}president{% elsif entry.sitemap.role=='VP Education' %}vp-education{% elsif entry.sitemap.role=='VP Finance'%}
+                                        vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
+                                        vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">{{ entry.title }}</span></a>
+                            
+                            {% include sitemap.html context=entry.url currentPath=currentTreePath lang='fr' %}
+                            {% assign currentDirectory = include.currentPath | append: '/' %}
+                            {% continue %}
+                        </li>
+                    {% endif %}
+                {% endif %}
+        
+        
+            {% elsif entry.url contains include.currentPath and include.currentPath != '' and currentTreePath !=
+            include.currentPath and currentDirectory == directory %}
+        
+                {% if include.lang == 'en' %}
+                    {% unless entry.url contains '/fr/' %}
+                        <li class="{% if entry.sitemap.role=='National IT Officer' %}it-officer{% elsif entry.sitemap.role=='VP Communications' %}vp-communications
+                                {% elsif entry.sitemap.role=='President' %}president{% elsif entry.sitemap.role=='VP Education' %}vp-education{% elsif entry.sitemap.role=='VP Finance'%}
+                                vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
+                                vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">
+                    
+                    
+                            <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+                        </li>
+                    {% endunless %}
+                {% elsif include.lang == 'fr' %}
+                    {% if entry.url contains '/fr/' %}
+                    <li class="{% if entry.sitemap.role=='National IT Officer' %}it-officer{% elsif entry.sitemap.role=='VP Communications' %}vp-communications
+                            {% elsif entry.sitemap.role=='President' %}president{% elsif entry.sitemap.role=='VP Education' %}vp-education{% elsif entry.sitemap.role=='VP Finance'%}
+                            vp-finance{% elsif entry.sitemap.role=='VP Government Affairs' %}vp-gov-affairs{% elsif entry.sitemap.role=='VP Student Affairs' %}
+                            vp-student-affairs{% elsif entry.sitemap.role=='VP Global Health' %}vp-global-health{% endif %}">
+                        <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endunless %}
+    {% endfor %}
+</ul>
+{% endcapture %}{{ html | strip_newlines | replace:'    ','' | replace:'    ','' | replace:'  ',' ' }}

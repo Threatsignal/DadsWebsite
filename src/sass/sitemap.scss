@@ -1,0 +1,213 @@
+@import 'variables';
+
+.content {
+	display:flex;
+	h1 {
+		color:$dark;
+		font-size:28px;
+		font-weight:bold;
+		border-bottom:3px solid $brighter;
+		margin-bottom:20px;
+		i {
+			font-size:26px;
+			color:$neutral;
+			padding-left:15px;
+		}
+	}
+	h2 {
+		font-weight:bold;
+		color:$primary-color;
+		font-size:26px;
+	}
+	li {
+		font-family:$sans-serif-font-stack;
+	}
+}
+#sitemap { 
+	min-width:450px; 
+	width:600px; 
+}
+#legend { width:400px }
+#legend p, #legend ul {max-width:350px;}
+
+.incomplete, .incomplete a {color:$primary-color !important;}
+#incomplete-legend {color:$primary-color; }
+
+$nest-gap:50px;
+$nest-gap-mobile:20px;
+#sitemap{
+	a, a:hover {
+		transition:all 0.1s linear;
+		border-bottom:none;
+	}
+	ul {
+		margin:0;
+		margin-left:20px;
+		border-left:3px solid $brighter;
+		padding-bottom:0px;
+		margin-bottom:50px;
+		li:before {
+			content:"";
+			position:absolute;
+			width:$nest-gap - 10px;
+			height:3px;
+			background-color:$brighter;
+			margin-top:0.7em;
+			margin-left: -$nest-gap;
+		}
+		li {
+			list-style:none;
+			font-size:21px;
+			color:$neutral;
+			font-weight:bold;
+			margin:0;
+
+			//Spacing between nested levels
+			padding-left:$nest-gap;
+
+			//Space above and below main list-entry
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		ul {
+			margin-bottom:0px;
+		}
+		ul li {
+			font-size:17px;
+			font-weight:normal;
+			margin-bottom:0px;
+
+			//Reset for subsequent nesting
+			padding-top:0px;
+			padding-bottom:0px;
+		}
+	}
+}
+#legend {
+	p {
+		font-family:$sans-serif-font-stack;
+		line-height:1.4em;
+		color:$neutral;
+		font-size:17px;
+	}
+	ul {
+		margin-left:0;
+	}
+	li {
+		list-style:none;
+		margin-left:0;
+		color:$neutral;
+		font-weight:bold;
+		font-size:17px;
+	}
+}
+
+$circle-size:13px;
+.circle-style {
+	content:"●";
+	font-size:$circle-size;
+	padding-left:5px;
+}
+.president:after{
+	@extend .circle-style;
+	color:$president-color;
+}
+#president-legend:before{
+	@extend .circle-style;
+	color:$president-color;
+	padding-right:10px;
+}
+.vp-education:after{
+	@extend .circle-style;
+	color:$vp-education-color;
+}
+#vp-education-legend:before{
+	@extend .circle-style;
+	color:$vp-education-color;
+	padding-right:10px;
+}
+.vp-communications:after{
+	@extend .circle-style;
+	color:$vp-communications-color;
+}
+#vp-communications-legend:before{
+	@extend .circle-style;
+	color:$vp-communications-color;
+	padding-right:10px;
+}
+.vp-finance:after{
+	@extend .circle-style;
+	color:$vp-finance-color;
+}
+#vp-finance-legend:before{
+	@extend .circle-style;
+	color:$vp-finance-color;
+	padding-right:10px;
+}
+.vp-gov-affairs:after{
+	@extend .circle-style;
+	color:$vp-gov-affairs-color;
+}
+#vp-gov-affairs-legend:before{
+	@extend .circle-style;
+	color:$vp-gov-affairs-color;
+	padding-right:10px;
+}
+.vp-student-affairs:after{
+	@extend .circle-style;
+	color:$vp-student-affairs-color;
+}
+#vp-student-affairs-legend:before{
+	@extend .circle-style;
+	color:$vp-student-affairs-color;
+	padding-right:10px;
+}
+.vp-global-health:after{
+	@extend .circle-style;
+	color:$vp-global-health-color;
+}
+#vp-global-health-legend:before{
+	@extend .circle-style;
+	color:$vp-global-health-color;
+	padding-right:10px;
+}
+.it-officer:after{
+	@extend .circle-style;
+	color:$it-officer-color;
+}
+#it-officer-legend:before{
+	@extend .circle-style;
+	color:$it-officer-color;
+	padding-right:10px;
+}
+
+@media only screen and (max-width: 1199px){
+}
+
+@media only screen and (max-width: 959px) {
+	.content {flex-wrap:wrap;}
+	#sitemap {padding-top:30px; width:100%}
+	#legend {padding-bottom:30px; width:100%}
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+	.content h1 {font-size:$mobile-header-font-size;}
+	.content h2 {font-size:24px;}
+	#sitemap {min-width:0;}
+	#sitemap ul {
+		margin-left:5px;
+	}
+	#sitemap ul li:before {
+		width: $nest-gap-mobile - 10px;
+		margin-left: -$nest-gap-mobile;
+	}
+	#sitemap ul li {
+		padding-left: $nest-gap-mobile;
+		font-size:17px;
+	}
+	#sitemap ul ul li {
+		font-size:16px;
+	}
+	#legend p, #legend li {font-size:16px;}
+}
