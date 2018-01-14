@@ -20,10 +20,16 @@ sitemap:
 //			document.querySelector( "#contactLink" ).classList.toggle("active");
 //			document.querySelector( "#contactLink" ).classList.toggle("disabled");
     </script>
-    
-        <h1>Sitemap</h1>
+    <div class="content">
+    <div id="sitemap">
+        <h1>{{page.title}}<i class="fa fa-sitemap"></i></h1>
+        <hr>
 
         {% include sitemap.html context="/" currentPath=""  lang='en'%}
+
+    </div>
+
+    </div>
         
 
     {% include footer.html %}

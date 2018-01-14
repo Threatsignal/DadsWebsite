@@ -1,7 +1,6 @@
 @import 'variables';
 
 .content {
-	display:flex;
 	h1 {
 		color:$dark;
 		font-size:28px;
@@ -39,6 +38,13 @@ $nest-gap-mobile:20px;
 	a, a:hover {
 		transition:all 0.1s linear;
 		border-bottom:none;
+	}
+	a{
+		color: #777A89;
+	}
+	a:hover{
+		color:$primary-color;
+		text-decoration: none;
 	}
 	ul {
 		margin:0;
@@ -179,15 +185,6 @@ $circle-size:13px;
 	@extend .circle-style;
 	color:$it-officer-color;
 	padding-right:10px;
-}
-
-@media only screen and (max-width: 1199px){
-}
-
-@media only screen and (max-width: 959px) {
-	.content {flex-wrap:wrap;}
-	#sitemap {padding-top:30px; width:100%}
-	#legend {padding-bottom:30px; width:100%}
 }
 
 /* Mobile */
