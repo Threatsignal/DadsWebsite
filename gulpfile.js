@@ -15,6 +15,7 @@ var Server = require('karma').Server;
 var child = require('child_process');
 var browserSync = require('browser-sync').create();
 var watch = require('gulp-watch');
+var uglify = require('gulp-uglify');
 
 var sourceRoot = 'src';
 var sitePath = sourceRoot + '/site';
@@ -39,6 +40,11 @@ gulp.task('jekyll', () => {
 gulp.task('buildJekyll', ['buildSass', 'buildJs'], () => {
   jekyllLogger(child.execSync('jekyll build --source ' + sitePath + ' --destination ' + servePath));
   return process.exit(0);
+});
+
+gulp.task('buildJekyllProduction', ['buildSass', 'buildJsProduction'], () => {
+	jekyllLogger(child.execSync('jekyll build --source ' + sitePath + ' --destination ' + servePath));
+	return process.exit(0);
 });
 
 
@@ -82,6 +88,8 @@ gulp.task('buildSass', function () {
 gulp.task('default', ['buildSass', 'js', 'jekyll', 'serve']);
 gulp.task('build', ['buildJekyll']);
 
+gulp.task('buildProd', ['buildJekyllProduction']);
+
 /**
  * Run test once and exit
  */
@@ -102,6 +110,8 @@ var b = watchify(browserify(opts)).transform(babelify, { presets: ['es2015'] });
 
 gulp.task('buildJs', bundle); // so you can run `gulp js` to build the file
 
+gulp.task('buildJsProduction', bundleProd);
+
 gulp.task('js', () => {
     b.on('update', bundle); // on any dep update, runs the bundler
     b.on('log', gutil.log); // output build logs to terminal
@@ -120,4 +130,16 @@ function bundle() {
         .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(sourcemaps.write('./')) // writes .map file
         .pipe(gulp.dest(servePath + '/js'));
+}
+
+function bundleProd() {
+	if (!b) return console.log('Sorry, something went wrong');
+	return b.bundle()
+	// log errors if they happe
+		.on('error', gutil.log.bind(gutil, 'Browserify Error'))
+		.pipe(source('bundle.js'))
+		// optional, remove if you don't need to buffer file contents
+		.pipe(buffer())
+    .pipe(uglify())
+		.pipe(gulp.dest(servePath + '/js'));
 }
