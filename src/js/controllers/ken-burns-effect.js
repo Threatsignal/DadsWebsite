@@ -6,7 +6,6 @@ export default class KenBurnsController {
 	}
 	
 	process(){
-		console.log("Hello from Ken Burn Controller!");
 		/*
 	JavaScript For Responsive Bootstrap Carousel
 
